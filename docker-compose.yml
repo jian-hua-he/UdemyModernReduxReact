@@ -6,4 +6,4 @@ dev:
   volumes:
     - .:/code
   working_dir: /code
-  command: serve
+  command: yarn start

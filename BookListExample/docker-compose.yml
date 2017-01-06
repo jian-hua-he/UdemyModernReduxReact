@@ -1,0 +1,9 @@
+dev:
+  container_name: morden_redux_react
+  build: .
+  ports:
+    - "8080:8080"
+  volumes:
+    - .:/code
+  working_dir: /code
+  command: yarn start

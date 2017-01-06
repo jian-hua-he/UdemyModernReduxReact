@@ -1,5 +1,5 @@
 dev:
-  container_name: morden_redux_react
+  container_name: youtube_example
   build: .
   ports:
     - "8080:8080"

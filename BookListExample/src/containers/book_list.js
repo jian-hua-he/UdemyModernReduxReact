@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectedBook } from '../actions/index';
+import { selectBook } from '../actions/index';
 
 class BookList extends Component {
     renderList() {
         return this.props.books.map((book) => {
             return (
-                <li key={ book.title } className="list-group-item">{ book.title }</li>
+                <li key={ book.title }
+                    className="list-group-item"
+                    onClick={() => this.props.selectBook(book) }>
+                    { book.title }
+                </li>
             );
         });
     }
@@ -33,7 +37,7 @@ function mapDispatchToProps(dispatch) {
     // Whenever selectBook is called, the result should
     // be passed to all our reducers
     return bindActionCreators({
-        selectedBook: selectedBook,
+        selectBook: selectBook,
     }, dispatch);
 }
 

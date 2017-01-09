@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+    dev:
+      container_name: weather_example
+      build: .
+      ports:
+        - "8080:8080"
+      volumes:
+        - .:/code
+      working_dir: /code
+      command: yarn start
